@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "grpc/proto";
+
+message PingRequest {
+    string message = 1;
+};
+
+message PongResult {
+    string message = 1;
+};
+
+service Echo { 
+    rpc Ping(PingRequest) returns (PongResult); 
+};
